@@ -1,0 +1,73 @@
+#include <cstdio>
+
+int prompt(const char* name) {
+    printf("%s", name);
+    int value;
+    scanf("%d", &value);
+    return value;
+}
+
+int zbrajanje(int a,int b){
+	return a + b;
+}
+
+int oduzimanje(int a,int b){
+	return a - b;
+}
+
+int mnozenje(int a,int b){
+	return a * b;
+}
+
+int dijeljenje(int a,int b){
+	return a / b;
+}
+
+int main() {
+    printf("Mod 1 je za zbrajanje\n");
+    printf("Mod 2 je za oduzimanje\n");
+    printf("Mod 3 je za mnozenje\n");
+    printf("Mod 4 je za dijeljenje\n");
+    printf("U kojem modu zelis biti:\n");
+    int mod;
+    scanf("%d", &mod);
+
+    switch(mod)
+    {
+    case 1: {
+        printf("Odabrali ste zbrajanje!\n");
+        int a = prompt("a: ");
+        int b = prompt("b: ");
+        printf("%d + %d = %d\n", a, b, zbrajanje(a,b));
+        break;
+    }
+    case 2: {
+        printf("Odabrali ste oduzimanje!\n");
+        int a = prompt("a: ");
+        int b = prompt("b: ");
+        printf("%d - %d = %d\n", a, b, oduzimanje(a,b));
+        break;
+    }
+    case 3: {
+        printf("Odabrali ste mnozenje!\n");
+        int a = prompt("a: ");
+        int b = prompt("b: ");
+        printf("%d * %d = %d\n", a, b, mnozenje(a,b));
+        break;
+    }
+    case 4: {
+        printf("Odabrali ste dijeljenje! \n");
+        int a = prompt("a: ");
+        int b = prompt("b: ");
+        if (b == 0) {
+            printf("%d / %d = nedefinirano (dijeljenje s nulom)\n", dijeljenje(a,b));
+        } else {
+            printf("%d / %d = %d\n", a, b, dijeljenje(a,b));
+        }
+        break;
+    }
+    default:
+        printf("Nemamo tu opciju trenutno, prcekajte za nadogradnju programa, ili se javite developeru! \n");
+    }
+    return 0;
+}
